@@ -31,6 +31,9 @@ if(users[login]){
 };
 
 exports.postUsers = function(req, res) {
+
+	console.log(req.body.name,);
+	console.log(req.body.password);
   var user = new User({
     username: req.body.name,
     password: req.body.password
@@ -39,7 +42,8 @@ exports.postUsers = function(req, res) {
   user.save(function(err) {
     if (err)
       res.send(err);
-res.redirect('/tracks');
+
+	//res.redirect('/tracks');
    // res.json({ message: 'New beer drinker added to the locker room!' });
   });
 };
