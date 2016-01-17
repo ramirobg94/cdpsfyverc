@@ -22,7 +22,8 @@ router.get('/login', sessionController.new);
 router.post('/login', sessionController.create);
 router.get('/logout', sessionController.destroy);
 
-require('../config/passport')(passport);
+var passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy;
 
 router.get('/signup', userController.new);
 router.post('/signup', passport.authenticate('local-signup', {
