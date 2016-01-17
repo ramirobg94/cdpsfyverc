@@ -30,6 +30,21 @@ if(users[login]){
 }	else { callback(new Error('no existe el usuario'));}
 };
 
+exports.postUsers = function(req, res) {
+  var user = new User({
+    username: req.body.name,
+    password: req.body.password
+  });
+
+  user.save(function(err) {
+    if (err)
+      res.send(err);
+res.render('tracks/index', {tracks: tracks});
+   // res.json({ message: 'New beer drinker added to the locker room!' });
+  });
+};
+
+
 
 
 exports.new = function( req,res) {

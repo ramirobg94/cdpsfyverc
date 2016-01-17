@@ -22,15 +22,11 @@ router.get('/login', sessionController.new);
 router.post('/login', sessionController.create);
 router.get('/logout', sessionController.destroy);
 
-var passport = require('../config/passport')
+var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
 
 router.get('/signup', userController.new);
-router.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/tracks', // redirect to the secure profile section
-        failureRedirect : '/signup', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    }));
+router.post('/signup', userController.postUsers);
 
 // rutas /tracks
 router.get('/tracks', trackController.list);
