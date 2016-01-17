@@ -32,7 +32,7 @@ if(users[login]){
 
 exports.postUsers = function(req, res) {
 
-	console.log(req.body.name,);
+	console.log(req.body.name);
 	console.log(req.body.password);
   var user = new User({
     username: req.body.name,
