@@ -26,7 +26,11 @@ if(users[login]){
 };
 
 exports.new = function( req,res) {
-	res.render('sessions/signup', {errors: errors});
+	if ( req.session.user){
+		next();
+	} else {
+	res.render('sessions/signup');
+	}
 };
 
 exports.create = function(req,res){
