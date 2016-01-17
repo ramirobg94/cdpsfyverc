@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var multer  = require('multer');
+var passport = require('passport');
 
 var tracks_dir = process.env.TRACKS_DIR || './media/';
 
@@ -22,8 +23,11 @@ router.post('/login', sessionController.create);
 router.get('/logout', sessionController.destroy);
 
 router.get('/signup', userController.new);
-router.post('/signup', userController.create);
-
+router.post('/signup', passport.authenticate('local-signup', {
+        successRedirect : '/profile', // redirect to the secure profile section
+        failureRedirect : '/signup', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+    }));
 
 // rutas /tracks
 router.get('/tracks', trackController.list);
