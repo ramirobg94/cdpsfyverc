@@ -22,6 +22,8 @@ router.get('/login', sessionController.new);
 router.post('/login', sessionController.create);
 router.get('/logout', sessionController.destroy);
 
+require('../config/passport')(passport);
+
 router.get('/signup', userController.new);
 router.post('/signup', passport.authenticate('local-signup', {
         successRedirect : '/profile', // redirect to the secure profile section
