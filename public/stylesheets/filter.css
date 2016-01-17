@@ -1,0 +1,130 @@
+/*.tracksPrevios{
+  display:block;
+  float:left;
+  border:2px solid green;
+  min-height:300px;
+  width:100%;
+  border-radius:4px;
+}
+
+.btnFiltro > a{
+  display:block;
+  float:left;
+  text-decoration:none;
+  text-align:center;
+  padding:5px 0;
+  color:white;
+  background:#1271C7;
+}
+
+.cancion{
+ display:block;
+ float:left;
+ height:40px;
+ width:40px;
+ border:1px solid black;
+ margin:10px;
+ -webkit-transition:all .2s linear;
+ -moz-transition:all .2s linear;
+ -o-transition:all .2s linear;
+ -ms-transition:all .2s linear;
+ transition:all .2s linear;
+ margin-top:20px;
+}
+.btnFiltro > a:focus[data-filter]{
+    opacity:.8;
+     outline:none;
+}
+
+.btnFiltro > a[data-filter="red"]:focus ~ .cancion:not([data-filter="red"]){
+  height:0px;
+  width:0px;
+  border:none;
+  margin:0;
+  opacity: 0;
+}
+
+.btnFiltro > a[data-filter="blue"]:focus ~ .cancion:not([data-filter="blue"]){
+  height:0px;
+  width:0px;
+  border:none;
+  margin:0;
+  opacity: 0;
+}
+
+*/
+
+.btnFiltro>a{
+  display:block;
+  float:left;
+  text-decoration:none;
+  text-align:center;
+  padding:5px 0;
+  color:white;
+  margin-right: 5%;
+  margin-left: 5%s
+}
+
+.cancion{
+ display:block;
+ float:left;
+ -webkit-transition:all .2s linear;
+ -moz-transition:all .2s linear;
+ -o-transition:all .2s linear;
+ -ms-transition:all .2s linear;
+ transition:all .2s linear;
+ margin-top:20px;
+}
+
+.btnFiltro>a:focus[data-filter]{
+    opacity:.8;
+     outline:none;
+}
+
+.blueI{
+	height:0px;
+  width:0px;
+  margin:0;
+  opacity: 0;
+}
+
+.equal {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.item-image {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80%;
+  background-color: #333;
+}
+.item-image img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.item-content {
+}
+.item-text {
+  position: relative;
+  overflow: visible;
+  height: 40px;
+}
+.btn-filter{
+	margin-top: 2%;
+	    border-radius: 0.3em;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: #E05D22;
+    background-color: rgba(224, 93, 34, 0.20);
+}
+.btn-filter:hover{
+    background-color: rgba(224, 93, 34, 0.95);
+}

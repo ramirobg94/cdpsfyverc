@@ -1,0 +1,25 @@
+@media (max-width:  1100px ) {
+
+    .jumbotron{
+    padding-top: 28%;
+    }
+}
+
+
+@media (min-width : 768px) {
+    .desaparecer{
+        display: none;
+    }
+
+}
+
+@media (max-width: 650px ) {
+
+    .jumboContainer{
+        margin-left: 5%;
+    }
+    .jumbotron{
+    	    height: 92vh;
+    padding-top: 70%;
+    }
+}
