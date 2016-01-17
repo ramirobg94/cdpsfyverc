@@ -43,7 +43,7 @@ exports.postUsers = function(req, res) {
     if (err)
       res.send(err);
 
-	//res.redirect('/tracks');
+	res.redirect('/tracks');
    // res.json({ message: 'New beer drinker added to the locker room!' });
   });
 };
