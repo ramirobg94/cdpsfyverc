@@ -24,3 +24,10 @@ if(users[login]){
 	else { callback(new Error('password erroneo'));}
 }	else { callback(new Error('no existe el usuario'));}
 };
+
+exports.new = function( req,res) {
+	res.render('sessions/signup', {errors: errors});
+};
+
+exports.create = function(req,res){
+	};

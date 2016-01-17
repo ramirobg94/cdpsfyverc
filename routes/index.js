@@ -6,6 +6,7 @@ var tracks_dir = process.env.TRACKS_DIR || './media/';
 
 var trackController = require('../controllers/track_controller');
 var sessionController = require('../controllers/session_controller');
+var userController = require('../controllers/user_controller');
 
 router.get('/', function(req, res) {
   res.render('index');
@@ -19,6 +20,9 @@ router.get('/cargar', trackController.cargar);
 router.get('/login', sessionController.new);
 router.post('/login', sessionController.create);
 router.get('/logout', sessionController.destroy);
+
+router.get('/signup', userController.new);
+router.post('/signup', userController.create);
 
 
 // rutas /tracks
