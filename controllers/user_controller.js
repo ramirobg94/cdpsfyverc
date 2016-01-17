@@ -39,7 +39,7 @@ exports.postUsers = function(req, res) {
   user.save(function(err) {
     if (err)
       res.send(err);
-res.render('tracks/index', {tracks: tracks});
+res.redirect('/tracks');
    // res.json({ message: 'New beer drinker added to the locker room!' });
   });
 };
