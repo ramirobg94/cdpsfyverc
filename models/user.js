@@ -49,7 +49,8 @@ userSchema.methods.validPassword = function(password) {
   });*/
 
 var isMatch = (password == this.password);
-cb(null, isMatch);
+//cb(null, isMatch);
+
 };
 
 

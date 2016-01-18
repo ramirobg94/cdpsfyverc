@@ -15,6 +15,7 @@ var trackSchema = new Schema({
   created_at: Date,
   updated_at: Date,
   _uploadBy: { type: Schema.Types.ObjectId, ref: 'User' },
+  _uploadByName: { type: String, ref: 'User' },
 });
 
 
