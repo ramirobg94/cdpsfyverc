@@ -141,7 +141,7 @@ var user = 	req.session.user;
 			urlCover: urlCover,
 			url: url,
 			_uploadBy: user.id,
-			_uploadByName: user.name
+			_uploadByName: user.username
 	});
 
 	track.save(function(err) {
