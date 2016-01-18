@@ -9,6 +9,7 @@ exports.loginRequired = function(req, res, next){
 };
 
 exports.new = function( req,res) {
+	console.log(req.session.errors);
 	var errors = req.session.errors || {};
 	req.session.errors = {};
 console.log(errors);
@@ -26,6 +27,7 @@ exports.create = function(req,res){
 	userController.autenticar(login, password, function(error, user) {
 
 		if(error) { //si hay error retornamos mensajes de error de sesion
+			console.log(error);
 			req.session.errors = {};
 			req.session.errors = [{error}];
 
