@@ -29,7 +29,9 @@
 						      	     						 	  <div class="item-content">
           <div class="item-text">
 
-          						<p> <img class="imgUser" src="/images/user.png"> <a href="'#"+<%=tracks[t]._uploadById%>+"'" ><%=tracks[t]._uploadByName%></a></p>
+								<% if (tracks[t]._uploadById){%>
+          						<p> <img class="imgUser" src="/images/user.png"> <a href="#"><%=tracks[t]._uploadByName%></a></p>
+          						<%}%>
 						        <p class='lead'><%=tracks[t].name%></p>
 
 						         
