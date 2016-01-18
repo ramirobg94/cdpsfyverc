@@ -80,7 +80,7 @@ exports.create = function (req, res) {
 		var urlCover = 'http://10.1.1.1/media/covers/'+nameCover;
 	}
 
-	console.log('Nuevo fichero de audio. Datos: ', track);
+	//console.log('Nuevo fichero de audio. Datos: ', track);
 	var id = track.name.split('.')[0];
 	var name = track.originalname.split('.')[0];
 
@@ -109,9 +109,9 @@ exports.create = function (req, res) {
 		if (err) throw err;
 		console.log('done');
 	});*/
-	console.log("hola");
+	//console.log("hola");
 	console.log(track.trackId);
-	console.log("hola");
+	//console.log("hola");
 	var url = 'http://10.1.1.1/api/photo';
 
 	var req = request.post(url,function(err,resp,body){
@@ -126,7 +126,7 @@ exports.create = function (req, res) {
 	var form = req.form();
 
 	
-	console.log(timestamp);
+	//console.log(timestamp);
 	//var nameRndm = timestamp + '.png'
 	//form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'image/png'});
 	var nameRndm = timestamp + '.mp3';
@@ -139,7 +139,7 @@ exports.create = function (req, res) {
 			nameFile: nameRndm,
 			urlCover: urlCover,
 			url: url,
-			_uploadBy: session.user.id
+			_uploadBy: req.session.user.id
 	});
 
 	track.save(function(err) {
