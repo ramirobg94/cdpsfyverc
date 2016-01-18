@@ -21,7 +21,6 @@ exports.cargar = function (req, res) {
 }
 // Devuelve una lista de las canciones disponibles y sus metadatos
 exports.list = function (req, res) {
-console.log(session.user._id);
 	Track.find({},function(err,tracks){
 		if (err) throw err;
 		//var tracks = track_model.tracks;
@@ -52,6 +51,7 @@ exports.show = function (req, res) {
 // - Escribir en el registro la verdadera url generada al añadir el fichero en el servidor tracks.cdpsfy.es
 exports.create = function (req, res) {
 	console.log(req.files);
+	console.log(req.session);
 	var timestamp = new Date().getTime().toString();
 
 
@@ -139,7 +139,7 @@ exports.create = function (req, res) {
 			nameFile: nameRndm,
 			urlCover: urlCover,
 			url: url,
-			_uploadBy: session.user._id
+			//_uploadBy: session.user._id
 	});
 
 	track.save(function(err) {
