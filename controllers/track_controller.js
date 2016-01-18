@@ -133,7 +133,8 @@ var user = 	req.session.user;
 	var nameRndm = timestamp + '.mp3';
 	form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'audio/mpeg'});
 	var url = 'http://10.1.1.1/media/'+nameRndm;
-		
+		console.log(user.username);
+		console.log("***"+user);
 		// Escribe los metadatos de la nueva canción en el registro.
 		var track = new Track({
 			name: name,
