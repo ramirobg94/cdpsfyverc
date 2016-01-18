@@ -21,9 +21,7 @@ exports.cargar = function (req, res) {
 }
 // Devuelve una lista de las canciones disponibles y sus metadatos
 exports.list = function (req, res) {
-	Track.find({},{sort:{
-        created_at: -1 //Sort by Date Added DESC
-    }},function(err,tracks){
+	Track.find().sort([['created_at', 'descending']]).all(function(err,tracks){
 		if (err) throw err;
 		//var tracks = track_model.tracks;
 		//console.log(tracks);
