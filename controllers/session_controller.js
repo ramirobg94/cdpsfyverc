@@ -25,10 +25,12 @@ exports.create = function(req,res){
 
 	userController.autenticar(login, password, function(error, user) {
 
-console.log(error);
 		if(error) { //si hay error retornamos mensajes de error de sesion
+			req.session.errors = {};
 			req.session.errors = [{"message": 'Se ha producido un error:' + error}];
-			res.redirect("/login",{message : error.Error});
+			var errors =  req.session.errors ;
+
+			res.redirect("sessions/new",{message : error.Error});
 			return;
 		}
 console.log(user);
