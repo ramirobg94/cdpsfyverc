@@ -65,7 +65,7 @@ exports.postUsers = function(req, res) {
 exports.autenticar = function(login, password, callback){
 	console.log(login);
 	console.log(password);
-	User.findOne({username :  login}),function(err,user){
+	User.findOne({username :  login},function(err,user){
 		console.log("paso aqui");
 if (err) { return callback(err); }
 
