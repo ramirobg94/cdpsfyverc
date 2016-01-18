@@ -38,7 +38,7 @@ exports.create = function(req,res){
 
 		if(!user){
 			console.log("aqui3 no user");
-			eq.session.errors = {error: "nombre o password erroneos"};
+			req.session.errors = {error: "nombre o password erroneos"};
 			res.redirect("/login");
 			return;
 		}else{
