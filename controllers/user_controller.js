@@ -63,7 +63,6 @@ exports.postUsers = function(req, res) {
 };
 
 exports.autenticar = function(login, password, callback){
-	validPassword
 	User.findOne({username :  login}),function(err,user){
 if (err) { return callback(err); }
 
