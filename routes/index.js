@@ -13,10 +13,6 @@ router.get('/', function(req, res) {
   res.render('index');
 });
 
-//Mndb Guardar usuarios iniciales
-router.get('/cargar', trackController.cargar);
-//aqui acaba
-
 // rutas sesion
 router.get('/login', sessionController.new);
 router.post('/login', sessionController.create);
