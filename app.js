@@ -46,6 +46,8 @@ app.use(methodOverride('_method'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(favicon(__dirname + '/public/favicon.ico'));
+
 app.use(function(req,res,next) {
   if(!req.session.redir) {
         req.session.redir = '/';
