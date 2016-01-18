@@ -51,7 +51,8 @@ exports.show = function (req, res) {
 // - Escribir en el registro la verdadera url generada al añadir el fichero en el servidor tracks.cdpsfy.es
 exports.create = function (req, res) {
 	console.log(req.files);
-var idAu = 	console.log(req.session.user.id);
+var idAu = 	req.session.user.id;
+console.log(idAu);
 	var timestamp = new Date().getTime().toString();
 
 
