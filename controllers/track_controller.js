@@ -134,6 +134,7 @@ var idAu = 	console.log(req.session.user.id);
 	var url = 'http://10.1.1.1/media/'+nameRndm;
 		
 		// Escribe los metadatos de la nueva canción en el registro.
+		console.log("********"+idAu);
 		var track = new Track({
 			name: name,
 			nameFile: nameRndm,
