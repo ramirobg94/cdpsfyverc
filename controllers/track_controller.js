@@ -43,6 +43,8 @@ exports.create = function (req, res) {
 
 
 	var track = req.files.track;
+	var estilo = req.files.estilo;
+	console.log(estilo);
 
 	if(req.files.coverPhoto == null){
 		console.log("no hay cover");

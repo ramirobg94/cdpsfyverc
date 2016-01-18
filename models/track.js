@@ -14,6 +14,7 @@ var trackSchema = new Schema({
   urlCover: String,
   created_at: Date,
   updated_at: Date,
+  estilo: String,
   _uploadBy: { type: Schema.Types.ObjectId, ref: 'User' },
   _uploadByName: { type: String, ref: 'User' },
 });
