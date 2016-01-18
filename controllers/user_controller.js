@@ -100,16 +100,3 @@ exports.new = function( req,res) {
 	res.render('sessions/signup');
 	}
 };
-
-/*
-exports.create = function(req,res){
-
-	passport.authenticate('local-signup', {
-        successRedirect : '/tracks', // redirect to the secure profile section
-        failureRedirect : 'sessions/signup', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    });
-
-	};
-
-	*/
