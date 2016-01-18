@@ -18,8 +18,6 @@ var trackSchema = new Schema({
   _uploadByName: { type: String, ref: 'User' },
 });
 
-
-
 trackSchema.pre('save', function(next) {
   // get the current date
   var currentDate = new Date();

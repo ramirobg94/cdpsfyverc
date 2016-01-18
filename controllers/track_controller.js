@@ -6,19 +6,6 @@ var request = require('request');
 //var track_model = require('./../models/track');
 var Track = require('./../models/track.js');
 
-exports.cargar = function (req, res) {
-	var track = new Track({
-		name: 'Cute',
-		nameFile: 'Cute.mp3',
-		url: '/media/Cute.mp3'
-	});
-
-	track.save(function(err) {
-		if (err) throw err;
-
-		console.log("guardado con exito");
-	})
-}
 // Devuelve una lista de las canciones disponibles y sus metadatos
 exports.list = function (req, res) {
 	Track.find({}, null, {sort: {created_at: -1}},function(err,tracks){
@@ -42,7 +29,6 @@ exports.show = function (req, res) {
 	//track.id = req.params.trackId;
 	res.render('tracks/show', {track: track});
 	});
-
 };
 
 // Escribe una nueva canción en el registro de canciones.
@@ -87,32 +73,6 @@ var user = 	req.session.user;
 
 	// Aquí debe implementarse la escritura del fichero de audio (track.buffer) en tracks.cdpsfy.es
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
-	
-	/*	var form = new FormData();
-	form.append('my_buffer.png', track.buffer);
-	*/
-	/*
-	var formData = {
-	  		file: track.buffer,
-	  	};
-
-		console.log(formData);
-
-		request.post( {url:'http://localhost:3000/api/photo', formData: formData}, function(err, httpResponse, body) {
-	  	if (err) {
-	    return console.error('upload failed:', err);
-	  	}
-	  console.log('Upload successful!  Server responded with:', body);
-		});
-		*/
-	/*
-	form.submit('http://localhost:3000/api/photo', function (err,res){
-		if (err) throw err;
-		console.log('done');
-	});*/
-	//console.log("hola");
-	console.log(track.trackId);
-	//console.log("hola");
 	var url = 'http://10.1.1.1/api/photo';
 
 	var req = request.post(url,function(err,resp,body){
@@ -120,6 +80,11 @@ var user = 	req.session.user;
 			console.log('Error!');
 		}else{
 			console.log('URL:' + body)
+
+
+
+
+
 		}
 	});
 	
@@ -132,7 +97,7 @@ var user = 	req.session.user;
 	//form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'image/png'});
 	var nameRndm = timestamp + '.mp3';
 	form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'audio/mpeg'});
-	var url = 'http://10.1.1.1/media/'+nameRndm;
+	var urlT = 'http://10.1.1.1/media/'+nameRndm;
 		console.log(user.username);
 		console.log("***"+user);
 		// Escribe los metadatos de la nueva canción en el registro.
@@ -140,7 +105,7 @@ var user = 	req.session.user;
 			name: name,
 			nameFile: nameRndm,
 			urlCover: urlCover,
-			url: url,
+			url: urlT,
 			_uploadBy: user.id,
 			_uploadByName: user.username
 	});

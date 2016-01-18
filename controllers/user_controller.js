@@ -5,31 +5,6 @@ var LocalStrategy   = require('passport-local').Strategy;
 
 var User = require('./../models/user.js');
 
-/*
-exports.autenticar = function(login, password, callback){
-	/*models.User.find({
-		where: {
-			username: login
-		}
-	}).then(function(user){
-		if (user) {
-			if(user.verifyPassword(password)){
-				callback(null, user);
-			}
-			else{callback(new Error('password erroneo.')); }
-	} else { callback(new Error('No existe user=' + login))}
-	}).catch(function(error){callback(error)});
-*/
-/*
-if(users[login]){
-	if(password === users[login].password){
-		callback(null, users[login]);
-		res.render('tracks/index', {tracks: tracks});
-	}
-	else { callback(new Error('password erroneo'));}
-}	else { callback(new Error('no existe el usuario'));}
-};
-*/
 exports.postUsers = function(req, res) {
 
 	console.log(req.body.name);
