@@ -1,5 +1,10 @@
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 containerSubida LetrasBlancas">
 <h2>Login</h2>
+
+  <% if (message != null ) {(message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% }} %>
+
 <form action="/login" method="POST">
         <div class="form-group">
             	<label for="login">Login:</label>
