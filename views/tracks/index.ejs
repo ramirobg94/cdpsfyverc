@@ -30,7 +30,15 @@
           <div class="item-text">
 
 							<% if(tracks[t]._uploadBy != null){%>
-          						<p> <img class="imgUser" src="/images/user.png"> <a href="#"><%=tracks[t]._uploadByName%></a></p>
+							<div class="row">
+								<div class="col-xs-3">
+									<img class="imgUser" src="/images/user.png"> 
+								</div>
+								<div class="col-xs-6">
+									<p><a href="#"><%=tracks[t]._uploadByName%></a></p>
+								</div>
+
+							</div>
           						<%}%>
 						        <p class='lead'><%=tracks[t].name%></p>
 
