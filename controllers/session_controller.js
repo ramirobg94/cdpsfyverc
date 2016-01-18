@@ -13,7 +13,7 @@ exports.new = function( req,res) {
 	var errors = req.session.errors || {};
 	req.session.errors = {};
 console.log(errors);
-	res.render('sessions/new', {errors: errors});
+	res.render('sessions/new', {errors: errors.error});
 
 
 };
