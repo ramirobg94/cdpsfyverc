@@ -35,14 +35,22 @@ exports.create = function(req,res){
 			res.redirect("/login");
 			return;
 		}
-		console.log("aqui3");
-		console.log(user);
-		//Crear req.session.user y guardar campos id y username
-		// La sesion se define por la existencia de: req.session.user
-		console.log(user._id);
-		req.session.user = {id:user._id, username:user.username};
 
-		res.redirect(req.session.redir.toString()); //redireccion a path anterior o login
+		if(!user){
+			console.log("aqui3 no user");
+			eq.session.errors = {error: "nombre o password erroneos"};
+			res.redirect("/login");
+			return;
+		}else{
+			console.log("aqui3");
+			console.log(user);
+			//Crear req.session.user y guardar campos id y username
+			// La sesion se define por la existencia de: req.session.user
+			console.log(user._id);
+			req.session.user = {id:user._id, username:user.username};
+
+			res.redirect(req.session.redir.toString()); //redireccion a path anterior o login
+		}
 	});
 };
 
