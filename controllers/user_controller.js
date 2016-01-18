@@ -84,7 +84,8 @@ exports.autenticar = function(login, password, callback){
       });*/
 
 		if(password === user.password){
-		callback(null, users);
+			console.log(user);
+		callback(null, user);
 	}
 	else { callback(new Error('password erroneo'));}
 
