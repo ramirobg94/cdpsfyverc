@@ -115,7 +115,7 @@
 .item-text {
   position: relative;
   overflow: visible;
-  height: 40px;
+  /*height: 40px;*/
 }
 .btn-filter{
 	margin-top: 2%;
@@ -127,4 +127,7 @@
 }
 .btn-filter:hover{
     background-color: rgba(224, 93, 34, 0.95);
+}
+.imgUser{
+      height: 3vh;
 }
