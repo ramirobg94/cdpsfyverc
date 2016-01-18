@@ -10,6 +10,9 @@
     .desaparecer{
         display: none;
     }
+    .item-image {
+        padding-bottom: 40%;
+    }
 
 }
 
