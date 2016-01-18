@@ -5,7 +5,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 
 var User = require('./../models/user.js');
 
-
+/*
 exports.autenticar = function(login, password, callback){
 	/*models.User.find({
 		where: {
@@ -20,7 +20,7 @@ exports.autenticar = function(login, password, callback){
 	} else { callback(new Error('No existe user=' + login))}
 	}).catch(function(error){callback(error)});
 */
-
+/*
 if(users[login]){
 	if(password === users[login].password){
 		callback(null, users[login]);
@@ -29,24 +29,62 @@ if(users[login]){
 	else { callback(new Error('password erroneo'));}
 }	else { callback(new Error('no existe el usuario'));}
 };
-
+*/
 exports.postUsers = function(req, res) {
 
 	console.log(req.body.name);
 	console.log(req.body.password);
-  var user = new User({
-    username: req.body.name,
-    password: req.body.password
-  });
+  	User.findOne({ name :  name }, function(err, user) {
+        // if there are any errors, return the error
+        if (err)
+            return done(err);
 
-  user.save(function(err) {
-    if (err)
-      res.send(err);
+        // check to see if theres already a user with that name
+        if (user) {
+            console.log("nombre cogido");
+            //return done(null, false, req.flash('signupMessage', 'That name is already taken.'));
+        } else {
 
-	res.redirect('/tracks');
-   // res.json({ message: 'New beer drinker added to the locker room!' });
-  });
+			  var user = new User({
+			    username: req.body.name,
+			    password: req.body.password
+			  });
+
+			  user.save(function(err) {
+			    if (err)
+			      res.send(err);
+
+				res.redirect('/tracks');
+			   // res.json({ message: 'New beer drinker added to the locker room!' });
+			  });
+
+   		}
+	});
 };
+
+exports.autenticar = function(login, password, callback){
+	validPassword
+	User.findOne({name :  name}),function(err,user){
+if (err) { return callback(err); }
+
+      // No user found with that username
+      if (!user) { return callback(null, false); }
+
+      // Make sure the password is correct
+      user.validPassword(password, function(err, isMatch) {
+        if (err) { return callback(err); }
+
+        // Password did not match
+        if (!isMatch) { return callback(null, false); }
+
+        // Success
+        return callback(null, user);
+      });
+    }
+
+}
+
+
 
 
 
