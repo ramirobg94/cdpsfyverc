@@ -43,7 +43,8 @@ exports.create = function (req, res) {
 
 
 	var track = req.files.track;
-	var estilo = req.files.estilo;
+	var estilo = req.body.estilo;
+	console.log(req);
 	console.log(estilo);
 
 	if(req.files.coverPhoto == null){
