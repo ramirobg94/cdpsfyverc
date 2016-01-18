@@ -93,11 +93,6 @@ exports.autenticar = function(login, password, callback){
 
 }
 
-
-
-
-
-
 exports.new = function( req,res) {
 	if ( req.session.user){
 		res.render('tracks/index', {tracks: tracks});
@@ -106,6 +101,7 @@ exports.new = function( req,res) {
 	}
 };
 
+/*
 exports.create = function(req,res){
 
 	passport.authenticate('local-signup', {
@@ -115,3 +111,5 @@ exports.create = function(req,res){
     });
 
 	};
+
+	*/
