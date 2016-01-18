@@ -99,7 +99,7 @@
 .item-image {
   position: relative;
   overflow: hidden;
-  padding-bottom: 80%;
+  padding-bottom: 60%;
   background-color: #333;
 }
 .item-image img {
