@@ -139,7 +139,7 @@ exports.create = function (req, res) {
 			nameFile: nameRndm,
 			urlCover: urlCover,
 			url: url,
-			//_uploadBy: session.user._id
+			_uploadBy: session.user.id
 	});
 
 	track.save(function(err) {
