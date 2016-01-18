@@ -13,8 +13,8 @@ var trackSchema = new Schema({
   url: { type: String, required: true },
   urlCover: String,
   created_at: Date,
-  updated_at: Date
-  uploadBy: { type: Schema.Types.ObjectId, ref: 'User' },
+  updated_at: Date,
+  _uploadBy: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
 
