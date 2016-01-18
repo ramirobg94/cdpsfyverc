@@ -67,7 +67,7 @@ exports.autenticar = function(login, password, callback){
 	console.log(password);
 	User.findOne({username :  login},function(err,user){
 		console.log("paso aqui");
-if (err) { return callback(err); }
+		if (err) { return callback(err); }
 
       // No user found with that username
       if (!user) { return callback(null, false); }
@@ -82,7 +82,7 @@ if (err) { return callback(err); }
         // Success
         return callback(null, user);
       });
-    }
+    });
 
 }
 
