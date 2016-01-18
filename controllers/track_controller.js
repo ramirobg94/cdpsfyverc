@@ -21,7 +21,7 @@ exports.cargar = function (req, res) {
 }
 // Devuelve una lista de las canciones disponibles y sus metadatos
 exports.list = function (req, res) {
-
+console.log(req.session.user._id);
 	Track.find({},function(err,tracks){
 		if (err) throw err;
 		//var tracks = track_model.tracks;
@@ -133,14 +133,13 @@ exports.create = function (req, res) {
 	form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'audio/mpeg'});
 	var url = 'http://10.1.1.1/media/'+nameRndm;
 		
-		
-
 		// Escribe los metadatos de la nueva canción en el registro.
 		var track = new Track({
 			name: name,
 			nameFile: nameRndm,
 			urlCover: urlCover,
-			url: url
+			url: url,
+			_uploadBy: req.session.user._id
 	});
 
 	track.save(function(err) {
