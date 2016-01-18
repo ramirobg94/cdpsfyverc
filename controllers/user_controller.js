@@ -88,7 +88,6 @@ exports.autenticar = function(login, password, callback){
 		res.render('tracks/index', {tracks: tracks});
 	}
 	else { callback(new Error('password erroneo'));}
-}	else { callback(new Error('no existe el usuario'));}
 
     });
 
