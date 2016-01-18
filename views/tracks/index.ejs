@@ -3,23 +3,23 @@
 		<div class="col-xs-12">
 			<div class="row">
 				<a onclick="
-				$('.cancion').removeClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
+				$('.cancion').removeClass('blueI');" class="btn btn-primary btn-lg btn-filter">Todas</a>
 				<a onclick="
 				$('.cancion').removeClass('blueI');
-				$('.red').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
+				$('.Pop').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">Pop</a>
 				<a onclick="
 				$('.cancion').removeClass('blueI');
-				$('.blue').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
+				$('.Classic').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">Classic</a>
 				<a onclick="
 				$('.cancion').removeClass('blueI');
-				$('.blue').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>	
+				$('.Rock').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">Rock</a>	
 			</div>
 		</div>
 
 		<div class="col-xs-12">
 			<div class="row equal-height-panels ">
 				<%for (var t in tracks) {%>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 cancion red">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 cancion <%=tracks[t].estilo%>">
 					<a href='/tracks/<%=tracks[t]._id%>'>
 						<div class="panel panel-default">
 							<div class="item-image">

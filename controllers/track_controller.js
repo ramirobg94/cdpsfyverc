@@ -44,7 +44,6 @@ exports.create = function (req, res) {
 
 	var track = req.files.track;
 	var estilo = req.body.estilo;
-	console.log(req);
 	console.log(estilo);
 
 	if(req.files.coverPhoto == null){
@@ -109,6 +108,7 @@ exports.create = function (req, res) {
 			nameFile: nameRndm,
 			urlCover: urlCover,
 			url: urlT,
+			estilo: estilo,
 			_uploadBy: user.id,
 			_uploadByName: user.username
 		});
