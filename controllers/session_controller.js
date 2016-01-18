@@ -28,7 +28,7 @@ exports.create = function(req,res){
 
 		if(error) { //si hay error retornamos mensajes de error de sesion
 			console.log(typeof(error));
-			console.log(error);
+			console.log(error.message);
 			req.session.errors = {};
 			//req.session.errors ={error: error[0].Error};
 
