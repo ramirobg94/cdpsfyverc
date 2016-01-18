@@ -11,7 +11,7 @@ exports.loginRequired = function(req, res, next){
 exports.new = function( req,res) {
 	var errors = req.session.errors || {};
 	req.session.errors = {};
-
+console.log(errors);
 	res.render('sessions/new', {errors: errors});
 
 
@@ -28,9 +28,8 @@ exports.create = function(req,res){
 		if(error) { //si hay error retornamos mensajes de error de sesion
 			req.session.errors = {};
 			req.session.errors = [{"message": 'Se ha producido un error:' + error}];
-			var errors =  req.session.errors ;
 
-			res.redirect("sessions/new",{message : error.Error});
+			res.redirect("/login");
 			return;
 		}
 console.log(user);
