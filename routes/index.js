@@ -21,8 +21,10 @@ router.get('/logout', sessionController.destroy);
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
 
+// rutas users
 router.get('/signup', userController.new);
 router.post('/signup', userController.postUsers);
+router.get('/user/:userId', userController.show);
 
 // rutas /tracks
 router.get('/tracks', trackController.list);

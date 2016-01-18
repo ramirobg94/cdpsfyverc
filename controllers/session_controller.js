@@ -14,8 +14,6 @@ exports.new = function( req,res) {
 	req.session.errors = {};
 console.log(errors);
 	res.render('sessions/new', {errors: errors.error});
-
-
 };
 
 exports.create = function(req,res){
@@ -35,7 +33,6 @@ exports.create = function(req,res){
 			res.redirect("/login");
 			return;
 		}
-
 		if(!user){
 			console.log("aqui3 no user");
 			req.session.errors = {error: "nombre o password erroneos"};

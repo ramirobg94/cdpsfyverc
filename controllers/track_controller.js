@@ -28,7 +28,7 @@ exports.show = function (req, res) {
 	//var track = track_model.tracks[req.params.trackId];
 	//track.id = req.params.trackId;
 	res.render('tracks/show', {track: track});
-	});
+});
 };
 
 // Escribe una nueva canción en el registro de canciones.
@@ -37,7 +37,7 @@ exports.show = function (req, res) {
 // - Escribir en el registro la verdadera url generada al añadir el fichero en el servidor tracks.cdpsfy.es
 exports.create = function (req, res) {
 	console.log(req.files);
-var user = 	req.session.user;
+	var user = 	req.session.user;
 
 	var timestamp = new Date().getTime().toString();
 
@@ -98,8 +98,8 @@ var user = 	req.session.user;
 	var nameRndm = timestamp + '.mp3';
 	form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'audio/mpeg'});
 	var urlT = 'http://10.1.1.1/media/'+nameRndm;
-		console.log(user.username);
-		console.log("***"+user);
+	console.log(user.username);
+	console.log("***"+user);
 		// Escribe los metadatos de la nueva canción en el registro.
 		var track = new Track({
 			name: name,
@@ -108,15 +108,15 @@ var user = 	req.session.user;
 			url: urlT,
 			_uploadBy: user.id,
 			_uploadByName: user.username
-	});
+		});
 
-	track.save(function(err) {
-		if (err) throw err;
+		track.save(function(err) {
+			if (err) throw err;
 
-		console.log("guardado con exito");
-	})
+			console.log("guardado con exito");
+		})
 		res.redirect('/tracks');
-};
+	};
 
 // Borra una canción (trackId) del registro de canciones 
 // TODO:
@@ -130,14 +130,14 @@ exports.destroy = function (req, res) {
 		console.log('borrado'+ trackId);
 	//	if(trackId > 4){
 	//		console.log("hello");
-			request.del('http://10.1.1.1/delete/'+trackName);
+	request.del('http://10.1.1.1/delete/'+trackName);
 	//	} else {
 		//	console.log("id menor a 4");
 		//}
 		track.remove(function(err) {
-		    if (err) throw err;
-		    console.log('track successfully deleted!');
-    		res.redirect('/tracks');
-  		});
+			if (err) throw err;
+			console.log('track successfully deleted!');
+			res.redirect('/tracks');
+		});
 	});
 };

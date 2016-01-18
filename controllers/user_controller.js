@@ -73,3 +73,11 @@ exports.new = function( req,res) {
 		res.render('sessions/signup',{message: ''} );
 	}
 };
+
+exports.show = function (req, res) {
+	User.findById(req.params.userId,function(err,user){
+	//var track = track_model.tracks[req.params.trackId];
+	//track.id = req.params.trackId;
+	res.render('users/show', {user: user});
+});
+};
