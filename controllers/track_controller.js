@@ -21,7 +21,7 @@ exports.cargar = function (req, res) {
 }
 // Devuelve una lista de las canciones disponibles y sus metadatos
 exports.list = function (req, res) {
-console.log(req.session.user._id);s
+console.log(session.user._id);
 	Track.find({},function(err,tracks){
 		if (err) throw err;
 		//var tracks = track_model.tracks;
@@ -139,7 +139,7 @@ exports.create = function (req, res) {
 			nameFile: nameRndm,
 			urlCover: urlCover,
 			url: url,
-			_uploadBy: req.session.user._id
+			_uploadBy: session.user._id
 	});
 
 	track.save(function(err) {
