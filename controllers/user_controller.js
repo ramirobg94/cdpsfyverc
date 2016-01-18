@@ -98,6 +98,6 @@ exports.new = function( req,res) {
 	if ( req.session.user){
 		res.render('tracks/index', {tracks: tracks});
 	} else {
-	res.render('sessions/signup');
+	res.render('sessions/signup',{message: null} );
 	}
 };
