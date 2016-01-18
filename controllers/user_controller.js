@@ -34,7 +34,7 @@ exports.postUsers = function(req, res) {
 
 	console.log(req.body.name);
 	console.log(req.body.password);
-  	User.findOne({ name :  name }, function(err, user) {
+  	User.findOne({ username :  name }, function(err, user) {
         // if there are any errors, return the error
         if (err)
             return done(err);
@@ -64,7 +64,7 @@ exports.postUsers = function(req, res) {
 
 exports.autenticar = function(login, password, callback){
 	validPassword
-	User.findOne({name :  name}),function(err,user){
+	User.findOne({username :  login}),function(err,user){
 if (err) { return callback(err); }
 
       // No user found with that username
