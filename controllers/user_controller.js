@@ -73,7 +73,7 @@ exports.autenticar = function(login, password, callback){
       if (!user) { return callback(null, false); }
 
       // Make sure the password is correct
-      user.validPassword(password, function(err, isMatch) {
+      /*user.validPassword(password, function(err, isMatch) {
         if (err) { return callback(err); }
 
         // Password did not match
@@ -81,7 +81,15 @@ exports.autenticar = function(login, password, callback){
 
         // Success
         return callback(null, user);
-      });
+      });*/
+
+		if(password === user.password){
+		callback(null, users);
+		res.render('tracks/index', {tracks: tracks});
+	}
+	else { callback(new Error('password erroneo'));}
+}	else { callback(new Error('no existe el usuario'));}
+
     });
 
 }
