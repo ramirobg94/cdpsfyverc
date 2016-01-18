@@ -2,48 +2,48 @@
 	<div class="container">
 		<div class="col-xs-12">
 			<div class="row">
-			 <a onclick="
+				<a onclick="
 				$('.cancion').removeClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
-			  <a onclick="
+				<a onclick="
 				$('.cancion').removeClass('blueI');
-                 $('.red').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
-			   <a onclick="
+				$('.red').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
+				<a onclick="
 				$('.cancion').removeClass('blueI');
-                $('.blue').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
-			    <a onclick="
+				$('.blue').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>
+				<a onclick="
 				$('.cancion').removeClass('blueI');
-                $('.blue').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>	
+				$('.blue').addClass('blueI');" class="btn btn-primary btn-lg btn-filter">TRACKS...!</a>	
 			</div>
 		</div>
 
 		<div class="col-xs-12">
 			<div class="row equal-height-panels ">
 				<%for (var t in tracks) {%>
-	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 cancion red">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 cancion red">
 					<a href='/tracks/<%=tracks[t]._id%>'>
 						<div class="panel panel-default">
 							<div class="item-image">
-     						 <img src="<%=tracks[t].urlCover%>" class="img-responsive ">
-     						</div>
-						      <div class="panel-body">
-						      	     						 	  <div class="item-content">
-          <div class="item-text">
-
-							<% if(tracks[t]._uploadBy != null){%>
-							<div class="row">
-								<div class="col-xs-3 ">
-									<img class="imgUser" src="/images/user.png"> 
-								</div>
-								<div class="col-xs-6 text-left">
-									<p><a href="#"><%=tracks[t]._uploadByName%></a></p>
-								</div>
-
+								<img src="<%=tracks[t].urlCover%>" class="img-responsive ">
 							</div>
-          						<%}%>
-						        <p class='lead'><%=tracks[t].name%></p>
+							<div class="panel-body">
+								<div class="item-content">
+									<div class="item-text">
 
-						         
-						        <p>
+										<% if(tracks[t]._uploadBy != null){%>
+										<div class="row">
+											<div class="col-xs-1 ">
+												<img class="imgUser img-rounded" src="/images/user.png"> 
+											</div>
+											<div class="col-xs-11 text-left">
+												<p><a href="#"><%=tracks[t]._uploadByName%></a></p>
+											</div>
+
+										</div>
+										<%}%>
+										<p class='lead'><%=tracks[t].name%></p>
+
+										
+										<p>
 
 
 						       <!-- <p>20 Followers, 2 Posts</p>
@@ -51,29 +51,16 @@
 						          <img src="//placehold.it/28X28/ededed">          
 						          <img src="//placehold.it/28X28/a0c3fd">          
 						          <img src="//placehold.it/28X28/25282d"> -->         
-						        </p>
-							</div>
+						      </p>
+						  </div>
 						</div>
-							</div>
-						</div>
-					</a>
+					</div>
 				</div>
-
-<%}%>
-				
-
-			</div>
+			</a>
 		</div>
+
+		<%}%>
 	</div>
+</div>
+</div>
 </section>
-<!--
-<%for (var t in tracks) {%>
-
-<a class="track" href='/tracks/<%=tracks[t]._id%>'>
-	<img src="<%=tracks[t].urlCover%>">
-	<p><%=tracks[t].name%></p>
-</a>
-
-<%}%>
-
--->

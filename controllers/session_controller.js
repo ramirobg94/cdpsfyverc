@@ -35,6 +35,7 @@ exports.create = function(req,res){
 			res.redirect("/login");
 			return;
 		}
+		console.log("aqui3");
 		console.log(user);
 		//Crear req.session.user y guardar campos id y username
 		// La sesion se define por la existencia de: req.session.user
