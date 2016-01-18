@@ -34,7 +34,7 @@ exports.postUsers = function(req, res) {
 
 	console.log(req.body.name);
 	console.log(req.body.password);
-  	User.findOne({ username :  name }, function(err, user) {
+  	User.findOne({ username :  req.body.name }, function(err, user) {
         // if there are any errors, return the error
         if (err)
             return done(err);
