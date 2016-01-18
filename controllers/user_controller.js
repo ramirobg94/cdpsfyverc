@@ -42,6 +42,7 @@ exports.postUsers = function(req, res) {
         // check to see if theres already a user with that name
         if (user) {
             console.log("nombre cogido");
+            res.redirect('/signup', {message : "name in use."});
             //return done(null, false, req.flash('signupMessage', 'That name is already taken.'));
         } else {
 
