@@ -85,7 +85,6 @@ exports.autenticar = function(login, password, callback){
 
 		if(password === user.password){
 		callback(null, users);
-		res.render('tracks/index', {tracks: tracks});
 	}
 	else { callback(new Error('password erroneo'));}
 
