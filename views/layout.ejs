@@ -73,12 +73,15 @@
                       <li><a href="/login">Login</a></li>
                       <li><a href="/signup">Registro</a></li>
       <%}else{%>
+      <li>
+           <img class="imgUser img-rounded" src="/images/user.png">
+      </li>
         <li>
-            <img class="imgUser img-rounded" src="/images/user.png">
-          <a href="#"> <%=session.user.username%> </a>
+                     <a href="/user/<%session.user.id%>"> <%=session.user.username%> </a>
         </li>  
           <li>
-          <a href="/logout">  Logout</a>
+          <a href="/logout">  Logout <span class="glyphicon glyphicon-log-out"></span>
+</a>
         </li>  
       <%}%>
           </ul>
