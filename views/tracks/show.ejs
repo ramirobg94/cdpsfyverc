@@ -21,8 +21,8 @@
 
 					 <% if(session.user){%>
 					 <% if(session.user.id == track._uploadBy){%>
-				<form class="btn btn-danger" method="post" action="/tracks/<%=track._id%>?_method=delete">
-					<button type="submit" onClick="return confirm('Delete: <%=track.name%>. Are you sure? ');">
+				<form  method="post" action="/tracks/<%=track._id%>?_method=delete">
+					<button class="btn btn-danger" type="submit" onClick="return confirm('Delete: <%=track.name%>. Are you sure? ');">
 						Delete track <span class="glyphicon glyphicon-trash"></span>
 					</button>
 				</form>
