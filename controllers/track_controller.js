@@ -130,6 +130,7 @@ exports.destroy = function (req, res) {
 	
 	Track.findById(req.params.trackId,function(err,track){
 		var trackName = track.nameFile;
+		console.log(trackName);
 		console.log('borrado'+ trackId);
 	//	if(trackId > 4){
 	//		console.log("hello");
