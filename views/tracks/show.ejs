@@ -2,43 +2,33 @@
 <section class="text-center" id="showTrack">
 
 
-		<div class="container-flux imagenShowTrackBox" style="
-    background-image: url('<%=track.urlCover%>');
-">
-			<div class="container imageBox">
-				<div class="row imageBox ">
-					<div class="col-xs-12 imageBox imageBoxOut">
-						<img class="img img-responsive imagenShowTrack" src="<%=track.urlCover%>" alt="">
-					</div>
-				</div>
+	<div class="container-flux imagenShowTrackBox" style="
+	background-image: url('<%=track.urlCover%>');
+	">
+	<div class="container imageBox">
+		<div class="row imageBox ">
+			<div class="col-xs-12 imageBox imageBoxOut">
+				<img class="img img-responsive imagenShowTrack" src="<%=track.urlCover%>" alt="">
+			</div>
 		</div>
-		<div class="container-flux infohowTrackBox">
+	</div>
+	<div class="container-flux infohowTrackBox">
 		<div class="container InfoBox">
-		<div class="col-xs-12">
-			
-		<audio class="audioControl" src="<%=track.url%>" type="audio/mpeg" controls="controls"></audio>
-	<h1><%=track.name%></h1>
-		<form method="post" action="/tracks/<%=track._id%>?_method=delete">
-	    	<button type="submit" onClick="return confirm('Delete: <%=track.name%>. Are you sure? ');">
-	     		 Delete track
-	    	</button>
-  		</form>
-		</div>
-		</div>
-		</div>
-	<div class="container">
-	<!--
-	<div class="track track_playing">
-		<img src="<%=track.urlCover%>">
-		<p><%=track.name%></p>
-		<audio src="<%=track.url%>" type="audio/mpeg" controls="controls"></audio>
-	
-		<form method="post" action="/tracks/<%=track._id%>?_method=delete">
-	    	<button type="submit" onClick="return confirm('Delete: <%=track.name%>. Are you sure? ');">
-	     		 Delete track
-	    	</button>
-  		</form>
-	</div>-->
+			<div class="col-xs-12">
 
-</div>
+				<audio class="audioControl" src="<%=track.url%>" type="audio/mpeg" controls="controls"></audio>
+				<h1><%=track.name%></h1>
+
+					 <% if(session.user){%>
+					 <%= if(session.user.id == track._uploadBy){%>
+				<form method="post" action="/tracks/<%=track._id%>?_method=delete">
+					<button type="submit" onClick="return confirm('Delete: <%=track.name%>. Are you sure? ');">
+						Delete track
+					</button>
+				</form>
+					 <%}}%>
+			</div>
+		</div>
+	</div>
+
 </div>
