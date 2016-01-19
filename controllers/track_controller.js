@@ -132,12 +132,8 @@ exports.destroy = function (req, res) {
 		var trackName = track.nameFile;
 		console.log(trackName);
 		console.log('borrado'+ trackId);
-	//	if(trackId > 4){
-	//		console.log("hello");
-	request.del('http://10.1.1.1/delete/'+trackName);
-	//	} else {
-		//	console.log("id menor a 4");
-		//}
+
+		request.del('http://10.1.1.1/delete/'+trackName);
 		track.remove(function(err) {
 			if (err) throw err;
 			console.log('track successfully deleted!');
