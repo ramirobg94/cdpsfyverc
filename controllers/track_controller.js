@@ -75,7 +75,7 @@ exports.create = function (req, res) {
 
 	// Aquí debe implementarse la escritura del fichero de audio (track.buffer) en tracks.cdpsfy.es
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
-	var url = 'http://10.1.1.1/api/photo';
+	var url = 'http://10.1.1.1/api/track';
 
 	var req = request.post(url,function(err,resp,body){
 		if(err){
@@ -98,7 +98,7 @@ exports.create = function (req, res) {
 	//var nameRndm = timestamp + '.png'
 	//form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'image/png'});
 	var nameRndm = timestamp + '.mp3';
-	form.append('userPhoto',track.buffer,{filename: nameRndm, contentType:'audio/mpeg'});
+	form.append('track',track.buffer,{filename: nameRndm, contentType:'audio/mpeg'});
 	var urlT = 'http://10.1.1.1/media/'+nameRndm;
 	console.log(user.username);
 	console.log("***"+user);
