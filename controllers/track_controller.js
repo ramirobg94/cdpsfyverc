@@ -128,15 +128,15 @@ console.log(trackSave.id);
 console.log(userS);
 				userS.tracks = userS.tracks.push(trackSave._id);
 console.log(userS);
-/*
-				userS.save(function(err){
-					if (err) throw err;
 
-					console.log("track añadido al usuario");
-				});
-				*/
+				 userS.save(function(err) {
+    if (err) throw err;
+
+    console.log('User successfully updated!');
+  });
+				
 			});
-		})
+		});
 		res.redirect('/tracks');
 	};
 
