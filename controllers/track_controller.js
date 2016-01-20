@@ -119,10 +119,10 @@ exports.create = function (req, res) {
 
 
 			console.log("guardado con exito");
-			console.log(req.session.user.id);
-console.log(trackSave);
+			console.log(user.id);
+console.log(trackSave.id);
 /*
-			User.findById(req.session.user.id,function(err,user){
+			User.findById(user.id,function(err,user){
 				if (err) throw err;
 
 			console.log(trackSave);
