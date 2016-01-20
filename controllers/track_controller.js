@@ -120,22 +120,29 @@ exports.create = function (req, res) {
 
 			console.log("guardado con exito");
 			console.log(user.id);
-console.log(trackSave.id);
+			console.log(trackSave.id);
 
-			User.findById(user.id,function(err,userS){
+			/*User.findById(user.id,function(err,userS){
 				if (err) throw err;
 
-console.log(userS);
+				console.log(userS);
 				userS.tracks = userS.tracks.push(trackSave._id);
-console.log(userS);
+				console.log(userS);
 
-				 userS.save(function(err) {
-    if (err) throw err;
+				userS.save(function(err) {
+					if (err) throw err;
 
-    console.log('User successfully updated!');
-  });
+					console.log('User successfully updated!');
+				});
 				
 			});
+			*/
+
+			User.findByIdAndUpdate(user.id,{$push:{tracks:trackSave._id}},function(err,userSave){
+				if (err) throw err;
+
+				console.log(userSave);
+			})
 		});
 		res.redirect('/tracks');
 	};
