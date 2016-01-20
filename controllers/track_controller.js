@@ -120,6 +120,8 @@ exports.create = function (req, res) {
 
 			console.log("guardado con exito");
 			console.log(req.session.user.id);
+console.log(trackSave);
+/*
 			User.findById(req.session.user.id,function(err,user){
 				if (err) throw err;
 
@@ -131,7 +133,7 @@ exports.create = function (req, res) {
 
 					console.log("track añadido al usuario");
 				})
-			});
+			});*/
 		})
 		res.redirect('/tracks');
 	};
