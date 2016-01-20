@@ -5,6 +5,7 @@ var request = require('request');
 //mndb des comentar si no
 //var track_model = require('./../models/track');
 var Track = require('./../models/track.js');
+var User = require('./../models/user.js');
 
 // Devuelve una lista de las canciones disponibles y sus metadatos
 exports.list = function (req, res) {
@@ -113,10 +114,24 @@ exports.create = function (req, res) {
 			_uploadByName: user.username
 		});
 
-		track.save(function(err) {
+		track.save(function(err,trackSave) {
 			if (err) throw err;
 
+
 			console.log("guardado con exito");
+			console.log(req.session.user.id);
+			User.findById(req.session.user.id,function(err,user){
+				if (err) throw err;
+
+			console.log(trackSave);
+				user.tracks = user.tracks.push(trackSave._id);
+
+				user.save(function(err){
+					if (err) throw err;
+
+					console.log("track añadido al usuario");
+				})
+			});
 		})
 		res.redirect('/tracks');
 	};
