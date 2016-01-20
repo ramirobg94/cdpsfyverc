@@ -125,14 +125,16 @@ console.log(trackSave.id);
 			User.findById(user.id,function(err,userS){
 				if (err) throw err;
 
-			console.log(trackSave);
+console.log(userS);
 				userS.tracks = userS.tracks.push(trackSave._id);
-
+console.log(userS);
+/*
 				userS.save(function(err){
 					if (err) throw err;
 
 					console.log("track añadido al usuario");
-				})
+				});
+				*/
 			});
 		})
 		res.redirect('/tracks');
