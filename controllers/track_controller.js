@@ -121,19 +121,19 @@ exports.create = function (req, res) {
 			console.log("guardado con exito");
 			console.log(user.id);
 console.log(trackSave.id);
-/*
-			User.findById(user.id,function(err,user){
+
+			User.findById(user.id,function(err,userS){
 				if (err) throw err;
 
 			console.log(trackSave);
-				user.tracks = user.tracks.push(trackSave._id);
+				userS.tracks = userS.tracks.push(trackSave._id);
 
-				user.save(function(err){
+				userS.save(function(err){
 					if (err) throw err;
 
 					console.log("track añadido al usuario");
 				})
-			});*/
+			});
 		})
 		res.redirect('/tracks');
 	};
